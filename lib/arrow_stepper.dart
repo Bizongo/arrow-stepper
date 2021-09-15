@@ -1,7 +1,4 @@
-library arrow_stepper;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+
+export 'package:arrow_stepper/src/stepper_with_arrow.dart';
+export 'package:arrow_stepper/src/arrow_step.dart';
