@@ -25,11 +25,14 @@ class ProgressStepWithChevron extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ClipPath(
-    child: Container(
-      width: this._width,
-      color: _wasCompleted ? this._progressColor : this._defaultColor,
-      child: _child,
-    ),
-    clipper: ChevronClipper(),
-  );
+        child: Container(
+          width: this._width,
+          decoration: BoxDecoration(
+              border: Border.all(
+                  color: _wasCompleted ? Color(0xffC4C4C4) : _progressColor)),
+          color: _wasCompleted ? this._progressColor : this._defaultColor,
+          child: _child,
+        ),
+        clipper: ChevronClipper(),
+      );
 }
