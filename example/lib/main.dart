@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   if (index == 1) {
                     return ProgressStepWithArrow(
                       width: widthOfStep,
-                      defaultColor: Colors.grey,
+                      defaultColor: Colors.white,
                       progressColor: Colors.green,
                       wasCompleted: _selectedStep >= index,
                       child: Center(
@@ -76,10 +76,16 @@ class _MyHomePageState extends State<MyHomePage> {
                     progressColor: Colors.green,
                     wasCompleted: _selectedStep >= index,
                     child: Center(
-                      child: Text(
-                        index.toString(),
-                        style: TextStyle(
-                          color: Colors.white,
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'DIams iddk',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                       ),
                     ),

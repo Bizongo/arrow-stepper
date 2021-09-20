@@ -1,3 +1,4 @@
+import 'package:arrow_stepper/src/border_painter_arrow.dart';
 import 'package:flutter/material.dart';
 
 import 'clipper/arrow_clipper.dart';
@@ -25,12 +26,18 @@ class ProgressStepWithArrow extends StatelessWidget {
         super(key: key);
 
   @override
-  Widget build(BuildContext context) => ClipPath(
-    child: Container(
-      width: this._width,
-      color: _wasCompleted ? this._progressColor : this._defaultColor,
-      child: _child ?? Container(),
+  Widget build(BuildContext context) => CustomPaint(
+    painter: BorderPainterArrow(),
+    child: ClipPath(
+      child: Container(
+        width: this._width,
+        decoration: BoxDecoration(
+          border: Border.all(color: Color(0xffC4C4C4)),
+          color: _wasCompleted ? this._progressColor : this._defaultColor,
+        ),
+        child: _child ?? Container(),
+      ),
+      clipper: ArrowClipper(),
     ),
-    clipper: ArrowClipper(),
   );
 }
