@@ -14,11 +14,13 @@ class ArrowWithStepper extends StatelessWidget {
   final double padding;
   final int stepCount;
   final int currentStep;
+  final ScrollController? stepScrollController;
   final ProgressStepperBuilder? builder;
   final ProgressStepperOnClick? onClick;
 
   const ArrowWithStepper({
     required this.width,
+    this.stepScrollController,
     this.height = 10,
     this.padding = 2,
     this.stepCount = 5,
@@ -32,6 +34,7 @@ class ArrowWithStepper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
+    controller: stepScrollController,
     scrollDirection: Axis.horizontal,
     child: Container(
       height: height,
